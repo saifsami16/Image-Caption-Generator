@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+
+<body >
+    {% if name %}
+        <h1>{{name}}</h1>
+    {% endif }
+    <!-- <img src="{{url_for('static', filename='example.jpg') }}" /> -->
+    <!-- <img src="static/example.jpg" /> -->
+    <style>    
+        body {
+          background-image: url('static/bg.png  ');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+    </style> 
+    <div>   
+        <form action="{{url_for('download_picture')}}" method="POST" enctype="multipart/form-data">   
+            <input type="file" name="file1" required>
+            <input type="submit"> 
+        </form>  
+    </div>
+    
+</body>
+</html>
+
